@@ -33,9 +33,16 @@ const generateDescription = async (product) => {
 router.post('/generate-description', async (req, res) => {
     console.log('Inside generate-description route handler');
     const product = req.body;
-    const description = await generateDescription(product);
-    res.json({ description });
+    try {
+      const description = await generateDescription(product);
+      res.json({ description });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Server error' });
+    }
   });
+  
+
   
 
 module.exports = {
