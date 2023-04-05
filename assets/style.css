@@ -1,0 +1,23 @@
+/* header styles */
+header {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+/* logo styles */
+.logo {
+  height: 30px;
+}
+
+/* header image */
+header img {
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+header .logo {
+  max-height: 40px;
+}
