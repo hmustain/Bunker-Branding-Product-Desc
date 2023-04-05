@@ -9,11 +9,20 @@ dotenv.config();
 // Create express app
 const app = express();
 
+// add middleware 
+
+app.use(express.json());
+
 app.post("/generate-description", async (req, res) => {
-  const product = req.body;
-  const description = await chatGPT.generateDescription(product);
-  res.send({ description });
-});
+    try {
+      const product = req.body;
+      const description = await chatGPT.generateDescription(product);
+      res.send({ description });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Server error");
+    }
+  });
 
 // Enable CORS
 app.use(cors());

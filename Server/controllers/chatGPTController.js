@@ -27,6 +27,13 @@ const generateDescription = async (product) => {
   }
 };
 
+router.post('/generate-description', async (req, res) => {
+    const product = req.body;
+    const description = await generateDescription(product);
+    res.json({ description });
+  });
+  
+
 module.exports = {
   generateDescription,
 };
