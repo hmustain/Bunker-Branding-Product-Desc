@@ -1,11 +1,13 @@
 const router = require('express').Router();
-require('dotenv').config();
+const axios = require('axios');
+
 
 const API_KEY = process.env.CHATGPT_API_KEY;
 
 const generateDescription = async (product) => {
+    console.log('I am inside the generateDesciption function');
   try {
-    const response = await router.post(
+    const response = await axios.post(
       'https://api.openai.com/v1/engines/davinci-codex/completions',
       {
         prompt: `Generate a product description for a ${product.category} named ${product.name} that ${product.description}.`,
@@ -20,6 +22,7 @@ const generateDescription = async (product) => {
         },
       }
     );
+    console.log('Response data:', response.data); // added console.log statement
     return response.data.choices[0].text.trim();
   } catch (error) {
     console.error(error);
@@ -28,6 +31,7 @@ const generateDescription = async (product) => {
 };
 
 router.post('/generate-description', async (req, res) => {
+    console.log('Inside generate-description route handler');
     const product = req.body;
     const description = await generateDescription(product);
     res.json({ description });
@@ -36,4 +40,5 @@ router.post('/generate-description', async (req, res) => {
 
 module.exports = {
   generateDescription,
+  router
 };
