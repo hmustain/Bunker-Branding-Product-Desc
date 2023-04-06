@@ -5,10 +5,6 @@ const API_KEY = process.env.CHATGPT_API_KEY
 const router = require("express").Router();
 const axios = require("axios");
 
-
-console.log("Api_key is", API_KEY);
-// console.log("process.env", process.env);
-
 const generateDescription = async (product) => {
   console.log("Inside generateDescription function");
   try {
