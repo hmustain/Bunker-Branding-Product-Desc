@@ -10,7 +10,7 @@ const Form = () => {
   const [additionalInfo, setAdditionalInfo] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleGenerateDescription = async () => {
+  const handleGenerateDescription = async (e) => {
     e.preventDefault();
     const product = {
       name: productName,
