@@ -1,4 +1,5 @@
-
+// Load dotenv module and configure it
+require('dotenv').config();
 
 const router = require("express").Router();
 const axios = require("axios");
