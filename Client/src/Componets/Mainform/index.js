@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+
 const Form = () => {
   const [productName, setProductName] = useState("");
   const [productType, setProductType] = useState("");
@@ -9,6 +11,7 @@ const Form = () => {
   const [shippingInfo, setShippingInfo] = useState("");
   const [additionalInfo, setAdditionalInfo] = useState("");
   const [description, setDescription] = useState("");
+  const [generated, setGenerated] = useState();
 
   const handleGenerateDescription = async (e) => {
     e.preventDefault();
@@ -25,10 +28,20 @@ const Form = () => {
       body: JSON.stringify(product),
     });
     const data = await response.json();
-    setDescription(data.description);
+      // Clear input fields
+  setProductName("");
+  setProductType("");
+  setProductVendor("");
+  setProductDetails("");
+  setWashingInstructions("");
+  setShippingInfo("");
+  setAdditionalInfo("");
+  setDescription("");
+  setDescription(data.description);
+  setGenerated(true);
   };
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" style={{ marginBottom: "100px"}}>
       <h1 className="mb-4">Product Description Generator</h1>
       <form onSubmit={handleGenerateDescription}>
         <div className="form-group">
@@ -104,19 +117,23 @@ const Form = () => {
             onChange={(e) => setAdditionalInfo(e.target.value)}
           />
         </div>
-        <button
-          id="generate-btn"
-          type="submit"
-          className="btn btn-primary"
-        >
+        <button id="generate-btn" type="submit" className="btn btn-primary">
           Generate Description
         </button>
       </form>
       {/* Display the generated description */}
-      <div className="mt-4">
-        <h2>Generated Description:</h2>
-        <p>{description}</p>
-      </div>
+      {generated && (
+        <div className="form-group">
+          <h2>Generated Description:</h2>
+          <textarea
+            className="form-control"
+            rows={15}
+            style={{ overflowY: "auto", resize: "none" }} // Add inline CSS
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+      )}
     </div>
   );
 };
