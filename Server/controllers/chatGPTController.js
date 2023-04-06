@@ -1,6 +1,6 @@
 // Load dotenv module and configure it
 require('dotenv').config();
-const API_KEY = process.env.CHATGPT_API_KEY;
+const API_KEY = process.env.CHATGPT_API_KEY
 
 const router = require("express").Router();
 const axios = require("axios");
