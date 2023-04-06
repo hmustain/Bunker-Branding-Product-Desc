@@ -4,7 +4,7 @@ require('dotenv').config();
 const router = require("express").Router();
 const axios = require("axios");
 
-const API_KEY = process.env.REACT_APP_CHATGPT_API_KEY;
+const API_KEY = process.env.CHATGPT_API_KEY;
 
 console.log("Api_key is", API_KEY);
 
