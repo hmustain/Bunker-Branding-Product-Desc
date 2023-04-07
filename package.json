@@ -4,12 +4,9 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "client-install": "cd client && npm install",
-    "server-install": "cd server && npm install",
-    "start": "node server.js",
-    "client": "cd client && npm run start",
-    "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server --ignore client",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
     "build": "cd client && npm run build"
   },
   
@@ -17,8 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0",
-    "nodemon": "^2.0.22"
+    "concurrently": "^5.1.0"
   },
   "dependencies": {
     "dotenv": "^16.0.3"
