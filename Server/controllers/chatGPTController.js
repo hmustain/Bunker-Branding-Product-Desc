@@ -8,7 +8,7 @@ const axios = require("axios");
 const generateDescription = async (product) => {
   console.log("Inside generateDescription function");
   try {
-    console.log(API_KEY);
+    // console.log(API_KEY);
     const response = await axios.post(
       "https://api.openai.com/v1/completions",
       {
