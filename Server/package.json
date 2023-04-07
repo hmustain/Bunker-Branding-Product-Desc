@@ -1,5 +1,5 @@
 {
-    "name": "bunker-product-desc-client",
+    "name": "bunker-product-desc-server",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
