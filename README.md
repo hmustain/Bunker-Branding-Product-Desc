@@ -16,10 +16,16 @@ Building out product descriptions can be timely. I wanted to create a product de
 - [Questions](#questions)
 
 ## Installation
-clone to repository and run `npm install` from the root level to install all packages
+clone the repository and run `npm install` from the root level to install all packages
 
 ## Usage
 Fill out the form input fields and click generate description
+
+### Screenshot
+![product-desc-app](https://user-images.githubusercontent.com/109978698/230664578-5ca9f889-7be9-4c94-87ad-97bc64af4969.jpg)
+
+### Link to deployed site
+https://bunker-product-desc.herokuapp.com/
 
 ## Credits
 Hunter Mustain
