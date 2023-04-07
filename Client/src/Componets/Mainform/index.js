@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { PulseLoader } from 'react-spinners';
 
 
 
@@ -42,6 +43,12 @@ const Form = () => {
   };
   return (
     <div className="container mt-5" style={{ marginBottom: "100px"}}>
+      {/* {Display PulseLoader while generating description}
+      {generated && (
+        <div className="form-group">
+          <PulseLoader color="#007bff" loading={generated} />
+          </div>
+      )} */}
       <h1 className="mb-4">Product Description Generator</h1>
       <form onSubmit={handleGenerateDescription}>
         <div className="form-group">

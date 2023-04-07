@@ -15,7 +15,8 @@
         "react-move": "^6.5.0",
         "react-router-dom": "^6.2.1",
         "react-samy-svg": "^3.0.7",
-        "react-scripts": "5.0.1"
+        "react-scripts": "5.0.1",
+        "react-spinners": "^0.13.8"
     },
     "scripts": {
         "start": "react-scripts start",
